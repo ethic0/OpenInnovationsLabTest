@@ -1,0 +1,18 @@
+<h1>Products</h1>
+<div *ngFor="let item of productList; let i = index" class="container">
+    <div *ngFor="let product of item?.products">
+        <div class="card" style="width: 18rem;">
+            <img src={{product.thumbnail}} class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6 class="card-title">{{product.brand}}</h6>
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">{{product.description}}</p>
+              <p class="card-text">Discount: {{product.discountPercentage}}%</p>
+              <p class="card-text">Price:{{product.price}}</p>
+              <p class="card-text">Rating:{{product.rating}}</p>
+              <p class="card-text">Stocks:{{product.stock}}</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="loginForm">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Email" formControlName="email" class="form-control" required>
+        </div>
+        <div *ngIf="isSubmit && (formControls.email.dirty && formControls.email.errors.required)" [ngStyle]="{'color':'red'}">
+            Please enter the Email.
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" placeholder="password" formControlName="password" class="form-control" required>
+        </div>
+        <div *ngIf="isSubmit && (formControls.password.dirty && formControls.password.errors.required)" [ngStyle]="{'color':'red'}">
+            Please enter the password.
+        </div>
+        <button class="btn btn-primary" [disabled]="!loginForm.valid" (click)="submitForm()">Login</button>
+    </form>
+</div>
